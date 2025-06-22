@@ -1,12 +1,8 @@
-Here’s a **detailed and well-structured `README.md`** that covers every aspect of your Fashion AI project — from overview, features, setup, to in-depth usage and visual previews.
-
----
-
 # 👗 Fashion Visual Search & Personalized Styling Assistant
 
 A modern **AI-powered web application** that helps users **search for visually similar fashion products**, receive **outfit recommendations** based on their style preferences and **simulate personalized experiences** using recent trends and LLMs — all in one elegant interface built with **Streamlit**, **CLIP**, and **Gemma LLM**.
 
-![Fashion Assistant UI](Src/Animation.gif)
+![Fashion Assistant UI](Src/Main)
 
 ---
 
