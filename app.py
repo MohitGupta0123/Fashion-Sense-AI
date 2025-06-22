@@ -33,6 +33,8 @@ with st.sidebar:
     4. Click **Simulate Fake History** to see personalized suggestions.
     5. Generate **Outfit Completion Suggestions** using LLM.
     """)
+    
+    st.caption("Developed by Mohit Gupta")
 
 # --- TOKEN CHECK PAGE CONTENT ---
 if not st.session_state.get("HF_TOKEN"):
@@ -110,7 +112,6 @@ st.markdown("""
         font-size: 14px;
         line-height: 1.3em;
         max-height: 3.8em;
-        overflow: hidden;
     }
     </style>
 """, unsafe_allow_html=True)
