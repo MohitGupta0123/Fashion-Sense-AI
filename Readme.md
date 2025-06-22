@@ -162,6 +162,7 @@ Once the app is running:
 ## 👨‍💻 Author
 
 **Mohit Gupta**
-🏆 Kaggle, Hackathon & Research Enthusiast
+
 🎓 [mgmohit1111@gmail.com](mailto:mgmohit1111@gmail.com)
+
 🔗 [LinkedIn](https://linkedin.com/in/mohitgupta012) | [GitHub](https://github.com/MohitGupta0123)
