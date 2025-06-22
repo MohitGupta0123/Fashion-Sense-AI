@@ -1,4 +1,6 @@
-# 👗 Fashion Visual Search & Personalized Styling Assistant
+# 👗 Fashion Sence AI
+
+## (Fashion Visual Search & Personalized Styling Assistant)
 
 ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit)
 ![HuggingFace](https://img.shields.io/badge/LLM-Gemma%203B-orange?logo=huggingface)
