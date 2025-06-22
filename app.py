@@ -15,7 +15,7 @@ from Modules.trends import get_combined_trend_string
 
 # --- CONFIG ---
 st.set_page_config(page_title="👗 Fashion Assistant", layout="wide")
-st.title("👗 Fashion Visual Search & Personalized Styling")
+st.title("👗 Fashion Sense AI")
 
 # --- SIDEBAR ---
 with st.sidebar:
