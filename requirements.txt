@@ -2,7 +2,6 @@ streamlit
 pandas
 numpy
 pillow
-pickle5
 torch
 transformers
 sentence-transformers
