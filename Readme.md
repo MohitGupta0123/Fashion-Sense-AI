@@ -1,14 +1,13 @@
 # 👗 Fashion Sence AI
-<p align="center">
-    ## (Fashion Visual Search & Personalized Styling Assistant)
 
-    ![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)
-    ![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit)
-    ![HuggingFace](https://img.shields.io/badge/LLM-Gemma%203B-orange?logo=huggingface)
-    ![FAISS](https://img.shields.io/badge/Search-FAISS-green?logo=facebook)
-    ![CLIP](https://img.shields.io/badge/Image%20Encoder-CLIP-lightgrey?logo=openai)
-    ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-</p>
+## (Fashion Visual Search & Personalized Styling Assistant)
+
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-ff4b4b?logo=streamlit)
+![HuggingFace](https://img.shields.io/badge/LLM-Gemma%203B-orange?logo=huggingface)
+![FAISS](https://img.shields.io/badge/Search-FAISS-green?logo=facebook)
+![CLIP](https://img.shields.io/badge/Image%20Encoder-CLIP-lightgrey?logo=openai)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 A modern **AI-powered web application** that helps users **search for visually similar fashion products**, receive **outfit recommendations** based on their style preferences and **simulate personalized experiences** using recent trends and LLMs — all in one elegant interface built with **Streamlit**, **CLIP**, and **Gemma LLM**.
 
