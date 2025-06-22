@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+pillow
+pickle5
+torch
+transformers
+sentence-transformers
+faiss-cpu
+requests
+beautifulsoup4
+accelerate
+huggingface_hub[hf_xet]
