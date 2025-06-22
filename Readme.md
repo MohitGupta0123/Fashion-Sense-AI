@@ -11,7 +11,7 @@
 
 A modern **AI-powered web application** that helps users **search for visually similar fashion products**, receive **outfit recommendations** based on their style preferences and **simulate personalized experiences** using recent trends and LLMs — all in one elegant interface built with **Streamlit**, **CLIP**, and **Gemma LLM**.
 
-## 🌐 Website - [DEMO]()
+## 🌐 Website - [DEMO](https://fashion-sense-ai.streamlit.app/)
 
 ![Fashion Assistant UI](Src/Main)
 
