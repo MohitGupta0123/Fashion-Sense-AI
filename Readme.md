@@ -161,7 +161,7 @@ Once the app is running:
 
 ## 👨‍💻 Author
 
-**Mohit Gupta**
+👤 **Mohit Gupta**
 
 🎓 [mgmohit1111@gmail.com](mailto:mgmohit1111@gmail.com)
 
