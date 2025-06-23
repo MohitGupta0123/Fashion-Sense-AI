@@ -17,6 +17,8 @@ from Modules.trends import get_combined_trend_string
 st.set_page_config(page_title="👗 Fashion Assistant", layout="wide")
 st.title("👗 Fashion Sense AI")
 
+st.markdown("---")
+
 # --- SIDEBAR ---
 with st.sidebar:
     st.markdown("### 🔐 Hugging Face Token")
