@@ -127,11 +127,26 @@ Once the app is running:
 
 ## 🖼️ UI Screenshots
 
-| Visual Search                       | Personalized Recommendations      | Outfit Completion                       |
-| ----------------------------------- | --------------------------------- | --------------------------------------- |
-| ![Visual Search](Src/Animation.gif) | ![Suggestions](Src/Animation.gif) | ![Outfit Suggestion](Src/Animation.gif) |
+### 🧪 Main Landing Page
+![Main UI 2](Src/RAG_main_2.png)
 
----
+### 📥 Uploaded Image
+![Uploaded Input](Src/RAG_Uploaded.png)
+
+### 👕 Visually Similar Products
+![Visually Similar Products](Src/RAG_Visually_simillar_products.png)
+
+### 🧾 Fake History Simulation
+![Fake History 1](Src/RAG_Fake_history_1.jpg)  
+![Fake History 2](Src/RAG_Fake_History_2.png)
+
+### 🧠 History-Based Recommendations
+![History Recommendation](Src/RAG_History_based_recomendation.png)
+
+### 🎯 Outfit Suggestions
+![Outfit Suggestions](Src/RAG_Outfit_Suggestions.png)
+
+--- 
 
 ## 🧪 Sample Use Cases
 
