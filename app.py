@@ -91,7 +91,7 @@ user_history = st.session_state.user_history
 st.markdown("## 🛍️ Search Your Style")
 uploaded_file = st.file_uploader("📄 Upload a clothing image", type=["jpg", "jpeg", "png"])
 text_query = st.text_input("🎯 Enter style query (e.g. 'floral, oversized')", "")
-top_k = st.number_input("🔢 Number of similar results", min_value=1, max_value=30, value=10, step=1)
+top_k = st.number_input("🔢 Number of similar results", min_value=1, max_value=30, value=12, step=1)
 
 # --- PREPARE STYLING ---
 st.markdown("""
