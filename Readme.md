@@ -13,7 +13,7 @@ A modern **AI-powered web application** that helps users **search for visually s
 
 ## 🌐 Website - [DEMO](https://fashion-sense-ai.streamlit.app/)
 
-[Fashion Assistant UI]("Src/RAG main.png")
+[Fashion Assistant UI]("Src\RAG main.png")
 
 ---
 
