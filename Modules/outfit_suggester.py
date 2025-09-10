@@ -94,7 +94,7 @@ def _to_str(x):
 
 def generate_outfit_gemma(
     image_url, row, user_id, df, user_history, trend_string,
-    number_of_suggestions=5, hf_token=None, model_id="google/gemma-3-12b-it"
+    number_of_suggestions=5, hf_token=None, model_id="google/gemma-3-27b-it"
 ):
     """
     Return outfit suggestions using HF Router /v1/chat/completions with an image.
