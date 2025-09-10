@@ -25,7 +25,7 @@ def generate_outfit_gemma(image_url, row, user_id, df, user_history, trend_strin
     
     print('Generating Outfit suggestions')
 
-    API_URL = "https://router.huggingface.co/featherless-ai/v1/chat/completions"
+    API_URL = "https://router.huggingface.co/v1/chat/completions"
     headers = {"Authorization": f"Bearer {hf_token}"}
 
     # Step 1: Get user preference summaries
