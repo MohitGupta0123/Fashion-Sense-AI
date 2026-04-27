@@ -1,17 +1,3 @@
-# import os
-# import torch
-# import numpy as np
-# from PIL import Image
-# from tqdm import tqdm
-# # from transformers import CLIPModel, CLIPProcessor
-# from sentence_transformers import SentenceTransformer
-# from transformers import AutoProcessor, AutoModelForZeroShotImageClassification
-
-# # Load models once globally
-# device = "cuda" if torch.cuda.is_available() else "cpu"
-
-# clip_processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32", use_fast=False)
-# clip_model = AutoModelForZeroShotImageClassification.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
 import os
 import torch
 import numpy as np
@@ -23,11 +9,8 @@ from sentence_transformers import SentenceTransformer
 # Load models once globally
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# Use proper CLIP model for feature extraction
-clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
 clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-# clip_model = CLIPModel.from_pretrained("openai/clip-vit-large-patch14").to(device).eval()
-# clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14", use_fast=True)
+clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
 
 text_model = SentenceTransformer("all-MiniLM-L6-v2")
 
@@ -36,13 +19,14 @@ def get_image_embedding(image_path: str) -> np.ndarray:
     Generate image embedding from a given image path using CLIP.
 
     Returns:
-        np.ndarray: L2-normalized image embedding (768D)
+        np.ndarray: L2-normalized image embedding (512D)
     """
     try:
         image = Image.open(image_path).convert("RGB")
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
         with torch.no_grad():
-            features = clip_model.get_image_features(**inputs)
+            outputs = clip_model(**inputs)
+            features = outputs.image_embeds
             return torch.nn.functional.normalize(features, p=2, dim=-1).cpu().numpy()[0]
     except Exception as e:
         print(f"❌ Image error: {image_path} — {e}")
