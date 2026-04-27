@@ -16,16 +16,18 @@ def encode_image(image_path: str) -> np.ndarray:
         image_path (str): Path to the image.
 
     Returns:
-        np.ndarray: Image embedding.
+        np.ndarray: Image embedding (normalized).
     """
     try:
         image = PILImage.open(image_path).convert("RGB")
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
 
         with torch.no_grad():
-            outputs = clip_model(**inputs)
-            features = outputs.image_embeds
-            emb = torch.nn.functional.normalize(features, p=2, dim=-1).cpu().numpy()[0]
+            # Use get_image_features which only requires pixel_values
+            image_features = clip_model.get_image_features(**inputs)
+            # Normalize the features
+            image_features = image_features / image_features.norm(p=2, dim=-1, keepdim=True)
+            emb = image_features.cpu().numpy()[0]
         return emb
     except Exception as e:
         raise ValueError(f"Error processing image {image_path}: {e}")
