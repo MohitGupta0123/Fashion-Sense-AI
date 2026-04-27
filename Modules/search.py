@@ -21,14 +21,13 @@ def encode_image(image_path: str) -> np.ndarray:
     """
     try:
         image = PILImage.open(image_path).convert("RGB")
+        # Only pass images to the processor - no text needed
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
 
         with torch.no_grad():
-            # Get the output object containing image_embeds tensor
-            outputs = clip_model(**inputs)
-            # Extract the image features tensor
-            image_features = outputs.image_embeds
-            # Normalize using torch.nn.functional
+            # Call get_image_features directly - it only requires pixel_values
+            image_features = clip_model.get_image_features(**inputs)
+            # Normalize the features
             normalized = F.normalize(image_features, p=2, dim=-1)
             emb = normalized.cpu().numpy()[0]
         return emb

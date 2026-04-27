@@ -23,13 +23,12 @@ def get_image_embedding(image_path: str) -> np.ndarray:
     """
     try:
         image = Image.open(image_path).convert("RGB")
+        # Only pass images to the processor, not text
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
         with torch.no_grad():
-            # Get the output object
-            outputs = clip_model(**inputs)
-            # Extract the image features tensor from the output object
-            image_features = outputs.image_embeds
-            # Normalize using torch.nn.functional
+            # Call get_image_features directly - it only needs pixel_values
+            image_features = clip_model.get_image_features(**inputs)
+            # Normalize the features
             normalized = torch.nn.functional.normalize(image_features, p=2, dim=-1)
             return normalized.cpu().numpy()[0]
     except Exception as e:
