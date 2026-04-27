@@ -1,18 +1,31 @@
+# import os
+# import torch
+# import numpy as np
+# from PIL import Image
+# from tqdm import tqdm
+# # from transformers import CLIPModel, CLIPProcessor
+# from sentence_transformers import SentenceTransformer
+# from transformers import AutoProcessor, AutoModelForZeroShotImageClassification
+
+# # Load models once globally
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# clip_processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32", use_fast=False)
+# clip_model = AutoModelForZeroShotImageClassification.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
 import os
 import torch
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
-# from transformers import CLIPModel, CLIPProcessor
+from transformers import CLIPModel, CLIPProcessor
 from sentence_transformers import SentenceTransformer
-from transformers import AutoProcessor, AutoModelForZeroShotImageClassification
 
 # Load models once globally
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-clip_processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32", use_fast=False)
-clip_model = AutoModelForZeroShotImageClassification.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
-
+# Use proper CLIP model for feature extraction
+clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device).eval()
+clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 # clip_model = CLIPModel.from_pretrained("openai/clip-vit-large-patch14").to(device).eval()
 # clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14", use_fast=True)
 
