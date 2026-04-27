@@ -25,11 +25,13 @@ def get_image_embedding(image_path: str) -> np.ndarray:
         image = Image.open(image_path).convert("RGB")
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
         with torch.no_grad():
-            # Use get_image_features which only requires pixel_values
-            image_features = clip_model.get_image_features(**inputs)
-            # Normalize the features
-            image_features = image_features / image_features.norm(p=2, dim=-1, keepdim=True)
-            return image_features.cpu().numpy()[0]
+            # Get the output object
+            outputs = clip_model(**inputs)
+            # Extract the image features tensor from the output object
+            image_features = outputs.image_embeds
+            # Normalize using torch.nn.functional
+            normalized = torch.nn.functional.normalize(image_features, p=2, dim=-1)
+            return normalized.cpu().numpy()[0]
     except Exception as e:
         print(f"❌ Image error: {image_path} — {e}")
         return None

@@ -2,6 +2,7 @@ import os
 import numpy as np
 from PIL import Image as PILImage
 import torch
+import torch.nn.functional as F
 from Modules.embedding import clip_model, clip_processor, text_model
 from Modules.faiss_index import search_index
 
@@ -23,11 +24,13 @@ def encode_image(image_path: str) -> np.ndarray:
         inputs = clip_processor(images=image, return_tensors="pt").to(device)
 
         with torch.no_grad():
-            # Use get_image_features which only requires pixel_values
-            image_features = clip_model.get_image_features(**inputs)
-            # Normalize the features
-            image_features = image_features / image_features.norm(p=2, dim=-1, keepdim=True)
-            emb = image_features.cpu().numpy()[0]
+            # Get the output object containing image_embeds tensor
+            outputs = clip_model(**inputs)
+            # Extract the image features tensor
+            image_features = outputs.image_embeds
+            # Normalize using torch.nn.functional
+            normalized = F.normalize(image_features, p=2, dim=-1)
+            emb = normalized.cpu().numpy()[0]
         return emb
     except Exception as e:
         raise ValueError(f"Error processing image {image_path}: {e}")
