@@ -3,6 +3,7 @@ pandas
 numpy
 pillow
 torch
+torchvision
 transformers
 sentence-transformers
 faiss-cpu
